@@ -22,7 +22,7 @@ namespace dumb_CHIP8
         public dumb_Video video;
         //public dumb_Debug debug;
 
-        public dumb_CHIP8M()
+        public dumb_CHIP8M(dumb_Video gfx)
         {
             this._cpu = new CHIP8_CPU(this);
             this._ram = new CHIP8_RAM(this);
@@ -32,7 +32,7 @@ namespace dumb_CHIP8
 
             this.input = new dumb_Input(ref _key);
             this.sound = new dumb_Sound(ref _snd);
-            this.video = MainWindow.gfx;
+            this.video = gfx;
 
             parts.Add(_cpu);
             parts.Add(_ram);

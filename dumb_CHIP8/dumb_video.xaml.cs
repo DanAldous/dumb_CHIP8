@@ -30,8 +30,8 @@ namespace dumb_CHIP8
         {
             InitializeComponent();
 
-            _gfx = new CHIP8_GFX(MainWindow.CHIP8);
-            MainWindow.gfx = this;
+            //_gfx = MainWindow.CHIP8._gfx;
+            //MainWindow.gfx = this;
             screenSize = new Int32Rect(0, 0, 64, 32);
             format = PixelFormats.BlackWhite;
             palette = BitmapPalettes.BlackAndWhite;
@@ -39,7 +39,10 @@ namespace dumb_CHIP8
             graphics.Source = GFX_Core;
             graphics.Visibility = Visibility.Visible;
         }
-
+        public void BindGFX(CHIP8_GFX gfx)
+        {
+            _gfx=gfx;
+        }
         public void init()
         {
             graphics.Source = GFX_Core;

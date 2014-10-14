@@ -24,7 +24,13 @@ namespace dumb_CHIP8
         public void exec()
         {
             if (dirty)
+            {
                 this.dirty = false;
+                for (int i = 0; i < 64; i++)
+                    for (int j = 0; j < 32; j++)
+                        xorPixel(i, j);
+
+            }
             //TODO
         }
         public void stop()

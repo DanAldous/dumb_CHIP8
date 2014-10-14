@@ -26,9 +26,9 @@ namespace dumb_CHIP8
         public MainWindow()
         {
             gfx = new dumb_Video();
-            CHIP8 = new dumb_CHIP8M();
-            //dumb_Video vid01 = new dumb_Video(ref CHIP8._gfx);   
-            //vid01.Visibility = Visibility.Visible;
+            CHIP8 = new dumb_CHIP8M(gfx);
+            gfx.BindGFX(CHIP8._gfx);
+
             InitializeComponent();
         }
 
